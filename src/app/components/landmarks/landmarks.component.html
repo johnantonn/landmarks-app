@@ -1,2 +1,10 @@
-<app-landmark-item *ngFor="let landmark of landmarks" [landmark]="landmark" (deleteLandmark)="deleteLandmark($event)">
-</app-landmark-item>
+<ul class="landmarks">
+  <li *ngFor="let landmark of landmarks" style="list-style: none;">
+    <h2>
+      <a [routerLink]="['landmarks',landmark.objectId]" routerLinkActive="active">{{landmark.title}}</a>
+    </h2>
+    <p>
+      {{landmark.short_info}}
+    </p>
+  </li>
+</ul>

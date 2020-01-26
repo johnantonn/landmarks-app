@@ -11,9 +11,15 @@ export class LandmarksComponent implements OnInit {
 
   landmarks: Landmark[];
 
-  constructor(private landmarkService: LandmarkService) { }
+  constructor(private landmarkService: LandmarkService) {
+    console.log("Inside constructor of landmarks");
+  }
 
   ngOnInit() {
+    this.getLandmarks();
+  }
+
+  getLandmarks(): void {
     this.landmarkService.getLandmarks().subscribe(landmarks => {
       console.log(landmarks);
       this.landmarks = landmarks;

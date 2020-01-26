@@ -1,0 +1,15 @@
+<div *ngIf="landmark">
+  <h2>
+    {{landmark.title}}
+  </h2>
+  <p>
+    {{landmark.short_info}}
+  </p>
+  <p>
+    {{landmark.description}}
+  </p>
+  <p>
+    {{landmark.url}}
+  </p>
+  <button (click)="goBack()">Back</button>
+</div>
