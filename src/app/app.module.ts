@@ -3,21 +3,25 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LandmarkRoutingModule } from './components/landmarks/landmarks-routing.module';
 import { AppComponent } from './app.component';
-import { LandmarksComponent } from './components/landmarks/landmarks.component';
+import { LandmarksListComponent } from './components/landmarks/landmarks-list/landmarks-list.component';
 import { HeaderComponent } from './components/layout/header/header.component';
-import { LandmarkDetailsComponent } from './components/landmark-details/landmark-details.component';
+import { LandmarkDetailsComponent } from './components/landmarks/landmark-details/landmark-details.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandmarksComponent,
+    LandmarksListComponent,
     HeaderComponent,
-    LandmarkDetailsComponent
+    LandmarkDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LandmarkRoutingModule,
     HttpClientModule,
   ],
   providers: [],

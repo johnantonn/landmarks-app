@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Landmark } from 'src/app/models/Landmark';
-import { LandmarkService } from '../../services/landmark.service';
+import { LandmarkService } from '../../../services/landmark.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 

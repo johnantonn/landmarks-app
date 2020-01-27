@@ -1,5 +1,5 @@
 export class Landmark {
-  objectId: number;
+  objectId: string;
   title: string;
   short_info: string;
   description: string;

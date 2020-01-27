@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Landmark } from '../../models/Landmark';
-import { LandmarkService } from '../../services/landmark.service';
+import { Landmark } from '../../../models/Landmark';
+import { LandmarkService } from '../../../services/landmark.service';
 
 @Component({
   selector: 'app-landmarks',
-  templateUrl: './landmarks.component.html',
-  styleUrls: ['./landmarks.component.css']
+  templateUrl: './landmarks-list.component.html',
+  styleUrls: ['./landmarks-list.component.css']
 })
-export class LandmarksComponent implements OnInit {
+export class LandmarksListComponent implements OnInit {
 
   landmarks: Landmark[];
 
