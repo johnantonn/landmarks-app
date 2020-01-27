@@ -26,7 +26,6 @@ export class LandmarkService {
 
   // GET landmark by id
   getLandmarkById(landmarkId: string): Observable<Landmark> {
-    console.log("Inside get landmark by id (service)");
     const url = `${this.landmarksUrl}/${landmarkId}`;
     return this.http.get<Landmark>(url, this.httpOptions);
   }

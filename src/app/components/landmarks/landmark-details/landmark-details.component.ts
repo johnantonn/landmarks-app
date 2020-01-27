@@ -24,10 +24,8 @@ export class LandmarkDetailsComponent implements OnInit {
   }
 
   getLandmark(): void {
-    const id = +this.route.snapshot.paramMap.get('objectId');
-    console.log(id);
-    this.landmarkService.getLandmarkById('lT6Xf7xWPV').subscribe(landmark => {
-      console.log(landmark);
+    const id = this.route.snapshot.params.id;
+    this.landmarkService.getLandmarkById(id).subscribe(landmark => {
       this.landmark = landmark;
     })
   }
