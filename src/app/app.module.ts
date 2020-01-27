@@ -8,6 +8,7 @@ import { LandmarksListComponent } from './components/landmarks/landmarks-list/la
 import { HeaderComponent } from './components/layout/header/header.component';
 import { LandmarkDetailsComponent } from './components/landmarks/landmark-details/landmark-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     LandmarksListComponent,
     HeaderComponent,
     LandmarkDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,

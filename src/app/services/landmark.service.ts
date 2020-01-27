@@ -41,4 +41,19 @@ export class LandmarkService {
     const url = `${this.landmarksUrl}/${landmark.objectId}`;
     return this.http.delete<Landmark>(url, this.httpOptions);
   }
+
+  // Upload image
+  uploadImage(landmarkId: string, imageFile: File): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'multipart/form-data',
+        'X-Parse-Application-Id': 'app'
+      })
+    };
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    const url = `${this.landmarksUrl}/${landmarkId}/image`
+    return this.http.post(url, formData, this.httpOptions);
+  }
+
 }
