@@ -17,20 +17,16 @@ export class LandmarkDetailsComponent implements OnInit {
     private landmarkService: LandmarkService,
     private route: ActivatedRoute,
     private location: Location
-  ) {
-    console.log("Inside constructor of landmark-details");
-  }
+  ) { }
 
   ngOnInit() {
-    console.log("Inside ngOnInit() of landmark-details");
     this.getLandmark();
   }
 
   getLandmark(): void {
-    //const id = +this.route.snapshot.paramMap.get('objectId');
-    const id = 'lT6Xf7xWPV';
+    const id = +this.route.snapshot.paramMap.get('objectId');
     console.log(id);
-    this.landmarkService.getLandmarkById(id).subscribe(landmark => {
+    this.landmarkService.getLandmarkById('lT6Xf7xWPV').subscribe(landmark => {
       console.log(landmark);
       this.landmark = landmark;
     })

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { LandmarkRoutingModule } from './components/landmarks/landmarks-routing.module';
 import { AppComponent } from './app.component';
 import { LandmarksListComponent } from './components/landmarks/landmarks-list/landmarks-list.component';
 import { HeaderComponent } from './components/layout/header/header.component';
@@ -21,7 +20,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LandmarkRoutingModule,
     HttpClientModule,
   ],
   providers: [],

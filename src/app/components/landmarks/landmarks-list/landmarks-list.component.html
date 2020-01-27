@@ -1,7 +1,7 @@
 <ul class="landmarks">
   <li *ngFor="let landmark of landmarks" style="list-style: none;">
     <h2>
-      <a [routerLink]="['landmarks',landmark.objectId]" routerLinkActive="active">{{landmark.title}}</a>
+      <a [routerLink]="['/landmarks', landmark.objectId]">{{landmark.title}}</a>
     </h2>
     <p>
       {{landmark.short_info}}
