@@ -11,6 +11,7 @@ export class UploadService {
 
   httpOptions = {
     headers: new HttpHeaders({
+      'content-type': 'multipart/form-data',
       'X-Parse-Application-Id': 'app'
     })
   };

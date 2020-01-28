@@ -23,7 +23,7 @@ export class ImageUploadComponent implements OnInit {
     console.log(event);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.selectImage = file;
+      this.selectedImage = file;
     }
   }
 
@@ -31,7 +31,7 @@ export class ImageUploadComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', this.selectedImage);
     const id = this.route.snapshot.params.id;
-    console.log(formData);
+
     this.uploadService.uploadImage(id, formData).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
