@@ -19,7 +19,6 @@ export class LandmarksListComponent implements OnInit {
 
   getLandmarks(): void {
     this.landmarkService.getLandmarks().subscribe(landmarks => {
-      console.log(landmarks);
       this.landmarks = landmarks;
     });
   }
