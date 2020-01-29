@@ -1,17 +1,26 @@
-<div *ngIf="landmark">
-  <h2 style="text-align: center">
-    {{landmark.title}}
-  </h2>
-  <p>
-    {{landmark.short_info}}
-  </p>
-  <p>
-    {{landmark.description}}
-  </p>
-  <p style="text-align: center">
-    {{landmark.url}}
-  </p>
+<div>
+  <div *ngIf="landmark" class="row">
+    <div class="column">
+      <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
+        <img src={{landmark.photo_thumb.url}} />
+      </a>
+    </div>
+    <div class="column">
+      <h2>
+        {{landmark.title}}
+      </h2>
+      <p>
+        {{landmark.short_info}}
+      </p>
+    </div>
+  </div>
   <div>
+    <p>
+      {{landmark.description}}
+    </p>
+    <p>
+      <a href={{landmark.url}} target="_blank">Visit the official page of {{landmark.title}}</a>
+    </p>
     <app-image-upload></app-image-upload>
   </div>
   <button (click)="goBack()">Back</button>

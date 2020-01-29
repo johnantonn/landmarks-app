@@ -20,7 +20,6 @@ export class ImageUploadComponent implements OnInit {
   }
 
   selectImage(event: any) {
-    console.log(event);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.selectedImage = file;

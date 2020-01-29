@@ -36,7 +36,6 @@ export class LandmarkDetailsComponent implements OnInit {
 
   onSave(landmark: Landmark) {
     this.landmarkService.updateLandmark(landmark).subscribe(response => {
-      console.log(response.message);
     })
   }
 
