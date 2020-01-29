@@ -2,6 +2,7 @@
   <li *ngFor="let landmark of landmarks" style="list-style: none;">
     <h2>
       <a [routerLink]="['/landmarks', landmark.objectId]">{{landmark.title}}</a>
+	  <img src = {{landmark.photo_thumb}}>
     </h2>
     <p>
       {{landmark.short_info}}

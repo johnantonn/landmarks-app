@@ -4,4 +4,6 @@ export class Landmark {
   short_info: string;
   description: string;
   url: string;
+  photo: string;
+  photo_thumb: string;
 }

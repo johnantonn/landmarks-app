@@ -29,7 +29,7 @@ export class ImageUploadComponent implements OnInit {
 
   onSubmit() {
     const formData = new FormData();
-    formData.append('file', this.selectedImage);
+    formData.append('landmarkImage', this.selectedImage);
     const id = this.route.snapshot.params.id;
 
     this.uploadService.uploadImage(id, formData).subscribe(

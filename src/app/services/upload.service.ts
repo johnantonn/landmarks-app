@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class UploadService {
   // Server api endpoint
-  private landmarksUrl: string = 'http://localhost:1337/parse/landmarks';
+  private landmarksUrl: string = 'http://localhost:1337/landmarks';
 
   httpOptions = {
     headers: new HttpHeaders({
-      'content-type': 'multipart/form-data',
       'X-Parse-Application-Id': 'app'
     })
   };
@@ -21,7 +20,7 @@ export class UploadService {
 
   // Upload image
   uploadImage(landmarkId: string, formData: FormData): Observable<any> {
-    const url = `${this.landmarksUrl}/${landmarkId}/upload`;
+    const url = `${this.landmarksUrl}/${landmarkId}/uploads`;
     return this.http.post<any>(url, formData, this.httpOptions);
   }
 
