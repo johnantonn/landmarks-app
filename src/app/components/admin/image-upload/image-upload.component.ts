@@ -35,8 +35,10 @@ export class ImageUploadComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     this.isSelected = false;
     this.uploadService.uploadImage(id, formData).subscribe(
-      (res) => window.alert("Image uploaded successfully"),
-      (err) => window.alert(err)
+      (res) => window.alert("Image uploaded successfully!"),
+      (err) => {
+        window.alert(`Image upload failed! ${err.error.message}`);
+      }
     );
   }
 
