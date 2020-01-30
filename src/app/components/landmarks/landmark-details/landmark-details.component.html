@@ -6,21 +6,25 @@
       </a>
     </div>
     <div class="column">
-      <h2>
+      <h2 id="editableTitle" contenteditable="false">
         {{landmark.title}}
       </h2>
-      <p>
+      <p id="editableInfo" contenteditable="false">
         {{landmark.short_info}}
       </p>
     </div>
   </div>
   <div>
-    <p>
+    <p id="editableDescription" contenteditable="false">
       {{landmark.description}}
     </p>
-    <p>
-      <a href={{landmark.url}} target="_blank">Visit the official page of {{landmark.title}}</a>
-    </p>
+    <div>
+      <p> More information: </p>
+      <a href={{landmark.url}} target="_blank">{{landmark.url}}</a>
+    </div>
+    <button (click)="onEdit()">Edit</button>
+    <button *ngIf="editActive" (click)="onCancel()">Cancel</button>
+    <button *ngIf="editActive" (click)="onSave()">Save</button>
     <app-image-upload></app-image-upload>
   </div>
   <button (click)="goBack()">Back</button>

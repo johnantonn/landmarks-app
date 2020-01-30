@@ -5,10 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandmarksListComponent } from './components/landmarks/landmarks-list/landmarks-list.component';
-import { HeaderComponent } from './components/layout/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { LandmarkDetailsComponent } from './components/landmarks/landmark-details/landmark-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ImageUploadComponent } from './components/landmarks/image-upload/image-upload.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ImageUploadComponent } from './components/landmarks/image-upload/image-
     HeaderComponent,
     LandmarkDetailsComponent,
     PageNotFoundComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    HomepageComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

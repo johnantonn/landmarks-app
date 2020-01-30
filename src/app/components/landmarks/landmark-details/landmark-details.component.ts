@@ -13,13 +13,16 @@ export class LandmarkDetailsComponent implements OnInit {
   @Input() landmark: Landmark;
   @Output() deleteLandmark: EventEmitter<Landmark> = new EventEmitter();
 
+  editActive: boolean;
+
   constructor(
     private landmarkService: LandmarkService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
   ) { }
 
   ngOnInit() {
+    this.editActive = false;
     this.getLandmark();
   }
 
@@ -34,13 +37,43 @@ export class LandmarkDetailsComponent implements OnInit {
     this.location.back();
   }
 
-  onSave(landmark: Landmark) {
-    this.landmarkService.updateLandmark(landmark).subscribe(response => {
-    })
-  }
-
   onDelete(landmark: Landmark) {
     this.deleteLandmark.emit(landmark);
   }
 
+  onEdit() {
+    // Make text fields editable
+    document.getElementById("editableTitle").contentEditable = "true";
+    document.getElementById("editableInfo").contentEditable = "true";
+    document.getElementById("editableDescription").contentEditable = "true";
+    this.editActive = true;
+  }
+
+  onCancel() {
+    // Deactivate editability
+    document.getElementById("editableTitle").contentEditable = "false";
+    document.getElementById("editableInfo").contentEditable = "false";
+    document.getElementById("editableDescription").contentEditable = "false";
+    // Recover text fields of Landmark object
+    document.getElementById("editableTitle").textContent = this.landmark.title;
+    document.getElementById("editableInfo").textContent = this.landmark.short_info;
+    document.getElementById("editableDescription").textContent = this.landmark.description;
+    this.editActive = false;
+  }
+
+  onSave() {
+    // Deactivate editability
+    document.getElementById("editableTitle").contentEditable = "false";
+    document.getElementById("editableInfo").contentEditable = "false";
+    document.getElementById("editableDescription").contentEditable = "false";
+    // Update text fields of Landmark object
+    this.landmark.title = document.getElementById("editableTitle").textContent;
+    this.landmark.short_info = document.getElementById("editableInfo").textContent;
+    this.landmark.description = document.getElementById("editableDescription").textContent;
+    this.editActive = false;
+    // Call the service to update Landmark object
+    this.landmarkService.updateLandmark(this.landmark).subscribe(res => {
+      console.log(`Successfully updated: ${this.landmark.title}`)
+    })
+  }
 }
