@@ -10,6 +10,7 @@ import { UploadService } from 'src/app/services/upload.service';
 export class ImageUploadComponent implements OnInit {
 
   selectedImage;
+  isSelected: boolean;
 
   constructor(
     private uploadService: UploadService,
@@ -17,12 +18,14 @@ export class ImageUploadComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isSelected = false;
   }
 
   selectImage(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.selectedImage = file;
+      this.isSelected = true;
     }
   }
 
@@ -30,11 +33,16 @@ export class ImageUploadComponent implements OnInit {
     const formData = new FormData();
     formData.append('landmarkImage', this.selectedImage);
     const id = this.route.snapshot.params.id;
-
+    this.isSelected = false;
     this.uploadService.uploadImage(id, formData).subscribe(
       (res) => window.alert("Image uploaded successfully"),
       (err) => window.alert(err)
     );
+  }
+
+  onCancel() {
+    this.isSelected = false;
+    this.selectedImage = null;
   }
 
 }

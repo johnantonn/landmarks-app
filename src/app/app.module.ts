@@ -8,10 +8,12 @@ import { LandmarksListComponent } from './components/landmarks/landmarks-list/la
 import { HeaderComponent } from './components/header/header.component';
 import { LandmarkDetailsComponent } from './components/landmarks/landmark-details/landmark-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ImageUploadComponent } from './components/landmarks/image-upload/image-upload.component';
+import { ImageUploadComponent } from './components/admin/image-upload/image-upload.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { LoginComponent } from './components/login/login.component';
-import { LogoutComponent } from './components/logout/logout.component';
+import { LoginComponent } from './components/admin/login/login.component';
+import { LogoutComponent } from './components/admin/logout/logout.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { DashboardDetailsComponent } from './components/admin/dashboard-details/dashboard-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { LogoutComponent } from './components/logout/logout.component';
     ImageUploadComponent,
     HomepageComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    DashboardComponent,
+    DashboardDetailsComponent
   ],
   imports: [
     BrowserModule,

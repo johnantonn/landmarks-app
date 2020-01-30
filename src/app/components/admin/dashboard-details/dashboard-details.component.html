@@ -1,14 +1,19 @@
+<app-logout></app-logout>
 <div>
   <div *ngIf="landmark" class="row">
     <div class="column">
       <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
         <img src={{landmark.photo_thumb.url}} />
       </a>
+      <app-image-upload></app-image-upload>
     </div>
     <div class="column">
       <h2 id="editableTitle" contenteditable="false">
         {{landmark.title}}
       </h2>
+      <button (click)="onEdit()">Edit</button>
+      <button *ngIf="editActive" (click)="onCancel()">Cancel</button>
+      <button *ngIf="editActive" (click)="onSave()">Save</button>
       <p id="editableInfo" contenteditable="false">
         {{landmark.short_info}}
       </p>
@@ -19,8 +24,8 @@
       {{landmark.description}}
     </p>
     <div>
-      <p> More information: </p>
-      <a href={{landmark.url}} target="_blank">{{landmark.url}}</a>
+      <p> More information:
+        <a href={{landmark.url}} target="_blank">{{landmark.url}}</a> </p>
     </div>
   </div>
   <button (click)="goBack()">Back</button>

@@ -1,14 +1,12 @@
+<app-logout></app-logout>
 <ul class="landmarks">
   <li *ngFor="let landmark of landmarks" style="list-style: none;">
     <h2>
       <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
         <img src={{landmark.photo_thumb.url}} />
       </a>
-      <a style="text-decoration: none" [routerLink]="['/landmarks', landmark.objectId]">{{landmark.title}}</a>
+      <a style="text-decoration: none" [routerLink]="[landmark.objectId]">{{landmark.title}}</a>
     </h2>
-    <p>
-      {{landmark.short_info}}
-    </p>
   </li>
   <button (click)="goBack()">Back</button>
 </ul>

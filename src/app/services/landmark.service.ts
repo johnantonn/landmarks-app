@@ -36,10 +36,4 @@ export class LandmarkService {
     return this.http.put(url, landmark, this.httpOptions);
   }
 
-  // DELETE: delete landmark from the server
-  deleteLandmark(landmark: Landmark): Observable<any> {
-    const url = `${this.landmarksUrl}/${landmark.objectId}`;
-    return this.http.delete<Landmark>(url, this.httpOptions);
-  }
-
 }

@@ -11,18 +11,25 @@ Parse.serverURL = 'http://localhost:1337/parse'
   providedIn: 'root'
 })
 export class AuthService {
-
+  // User instance
   user: User;
 
   // Redirect URL
   redirectUrl: string;
 
+  // Constructor
   constructor(private router: Router) {
     this.user = new User();
     this.user.loggedIn = false;
-    this.redirectUrl = '/admin/landmarks';
+    this.redirectUrl = '/admin/dashboard';
   }
 
+  isAuthenticated(): boolean {
+    if (Parse.User.current()) return true;
+    else return false;
+  }
+
+  // Login user
   login(username, password) {
     Parse.User.logIn(username, password).then((success) => {
       this.user.username = username;
@@ -36,9 +43,9 @@ export class AuthService {
     });
   }
 
+  // Logout user
   logout() {
-    Parse.User.logout().then((success) => {
-      console.log(success);
+    Parse.User.logOut().then((res) => {
       this.user.username = '';
       this.user.password = '';
       this.user.loggedIn = false;

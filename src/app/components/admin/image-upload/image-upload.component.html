@@ -1,0 +1,12 @@
+<div>
+  <form>
+    <div>
+      <input type="file" name="image" (change)="selectImage($event)" />
+    </div>
+    <br>
+    <div>
+      <button *ngIf="isSelected" type="submit" (click)="onSubmit()">Upload</button>
+      <button *ngIf="isSelected" type="submit" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>
