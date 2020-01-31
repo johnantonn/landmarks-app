@@ -5,13 +5,17 @@
       <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
         <img src={{landmark.photo_thumb.url}} />
       </a>
+      <div *ngIf="!landmark.photo_thumb"
+        style="justify-content: center; align-items: center; display: flex; border: 2px solid black; width: 250px; height:250px">
+        <h3>Upload image</h3>
+      </div>
       <app-image-upload></app-image-upload>
     </div>
-    <div class="column">
+    <div class=" column">
       <h2 id="editableTitle" contenteditable="false">
         {{landmark.title}}
       </h2>
-      <button (click)="onEdit()">Edit</button>
+      <button class="editButton" (click)="onEdit()">Edit</button>
       <button *ngIf="editActive" (click)="onCancel()">Cancel</button>
       <button *ngIf="editActive" (click)="onSave()">Save</button>
       <p id="editableInfo" contenteditable="false">
