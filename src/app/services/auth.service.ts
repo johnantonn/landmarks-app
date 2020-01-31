@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import Parse from 'parse';
 import { User } from '../models/User';
+import { BehaviorSubject } from 'rxjs';
 
 // Initialize Parse
 Parse.initialize("app");
@@ -13,6 +14,8 @@ Parse.serverURL = 'http://localhost:1337/parse'
 export class AuthService {
   // User instance
   user: User;
+  // Observable value
+  private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
   // Redirect URL
   redirectUrl: string;
@@ -35,6 +38,7 @@ export class AuthService {
       this.user.username = username;
       this.user.password = password;
       this.user.loggedIn = true;
+      this.loggedIn.next(true);
       this.router.navigateByUrl(this.redirectUrl);
       return this.user;
     }, (err) => {
@@ -43,12 +47,18 @@ export class AuthService {
     });
   }
 
+  // Observable value
+  get isUserLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+
   // Logout user
   logout() {
     Parse.User.logOut().then((res) => {
       this.user.username = '';
       this.user.password = '';
       this.user.loggedIn = false;
+      this.loggedIn.next(false);
       this.router.navigateByUrl('homepage');
     }, (err) => {
       window.alert(err);

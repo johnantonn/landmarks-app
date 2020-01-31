@@ -1,8 +1,15 @@
-<div style="text-align: center; margin-top: 70px;">
-  <h1>Welcome!</h1>
-  <h2>Please choose user type:</h2>
-</div>
-<div style="text-align: center; margin-top: 40px;">
-  <a [routerLink]="['/landmarks']"><button>Guest</button></a>
-  <a [routerLink]="['/admin/login']"><button>Admin</button></a>
+<div class="container-fluid d-flex flex-column align-items-center text-center">
+  <div id="welcomeDiv">
+    <h2>Welcome to the Landmarks application!</h2>
+  </div>
+  <div id="continueDiv">
+    <p>Continue as a guest to see a list of the most amazing Dubai landmarks, or login as an
+      administrator to make changes.</p>
+    <div id="buttonsDiv">
+      <button type=" button" class="btn btn-light btn-lg" tooltip="Continue as guest user" (click)="goToGuest()">
+        Guest</button>
+      <button type="button" class="btn btn-light btn-lg" tooltip="Continue as admin user"
+        (click)="goToAdmin()">Admin</button>
+    </div>
+  </div>
 </div>

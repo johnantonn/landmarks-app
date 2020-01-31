@@ -9,14 +9,15 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { DashboardDetailsComponent } from './components/admin/dashboard-details/dashboard-details.component';
 import { AuthGuard } from './services/auth.guard';
+import { GuestGuard } from './services/guest.guard';
 
 const routes: Routes = [
   { path: 'admin/login', component: LoginComponent },
   { path: 'admin/dashboard/:id', component: DashboardDetailsComponent, canActivate: [AuthGuard] },
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'admin', redirectTo: 'admin/login' },
-  { path: 'landmarks/:id', component: LandmarkDetailsComponent },
-  { path: 'landmarks', component: LandmarksListComponent },
+  { path: 'landmarks/:id', component: LandmarkDetailsComponent, canActivate: [GuestGuard] },
+  { path: 'landmarks', component: LandmarksListComponent, canActivate: [GuestGuard] },
   { path: 'homepage', component: HomepageComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

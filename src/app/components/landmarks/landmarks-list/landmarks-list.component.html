@@ -1,14 +1,25 @@
-<ul class="landmarks">
-  <li *ngFor="let landmark of landmarks" style="list-style: none;">
-    <h2>
-      <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
-        <img src={{landmark.photo_thumb.url}} />
-      </a>
-      <a style="text-decoration: none" [routerLink]="['/landmarks', landmark.objectId]">{{landmark.title}}</a>
-    </h2>
-    <p>
-      {{landmark.short_info}}
-    </p>
-  </li>
-  <button (click)="goBack()">Back</button>
-</ul>
+<div class="container-fluid">
+  <ul class="landmarks">
+    <li *ngFor="let landmark of landmarks">
+      <div class="row">
+        <div class="col-3">
+          <a *ngIf=" landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
+            <img src={{landmark.photo_thumb.url}} />
+          </a>
+          <div *ngIf="!landmark.photo_thumb"
+            style="justify-content: center; align-items: center; display: flex; border: 2px solid black; width: 250px; height:250px">
+            <h3>No image available</h3>
+          </div>
+        </div>
+        <div class="col-9">
+          <a [routerLink]="['/landmarks', landmark.objectId]">
+            <h2>{{landmark.title}}</h2>
+          </a>
+          <p>
+            {{landmark.short_info}}
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

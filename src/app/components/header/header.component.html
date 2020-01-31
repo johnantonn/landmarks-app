@@ -1,5 +1,14 @@
-<header class="header">
-  <h1>
-    <a [routerLink]="['/homepage']" style="margin-left: 30px;">Landmarks Application</a>
-  </h1>
-</header>
+<nav class="navbar navbar-default navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="favicon.ico" class="logo">
+      <span class="navbar-brand">&nbsp;Landmarks Application</span>
+    </div>
+    <div class="navbar-brand">
+      <a class="navbar-brand" [routerLink]="['/homepage']">Home</a>
+      <a *ngIf="(isLoggedIn$ | async) == false" class="navbar-brand" [routerLink]="['/landmarks']">Guest</a>
+      <a *ngIf="(isLoggedIn$ | async) == false" class="navbar-brand" [routerLink]="['/admin/login']">Admin</a>
+      <a *ngIf="isLoggedIn$ | async" class="navbar-brand" [routerLink]="['/homepage']" (click)="logout()">Logout</a>
+    </div>
+  </div>
+</nav>

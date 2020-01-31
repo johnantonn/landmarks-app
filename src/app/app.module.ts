@@ -11,7 +11,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ImageUploadComponent } from './components/admin/image-upload/image-upload.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/admin/login/login.component';
-import { LogoutComponent } from './components/admin/logout/logout.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { DashboardDetailsComponent } from './components/admin/dashboard-details/dashboard-details.component';
 
@@ -25,7 +24,6 @@ import { DashboardDetailsComponent } from './components/admin/dashboard-details/
     ImageUploadComponent,
     HomepageComponent,
     LoginComponent,
-    LogoutComponent,
     DashboardComponent,
     DashboardDetailsComponent
   ],
