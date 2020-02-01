@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import Parse from 'parse';
-import { User } from '../models/User';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 // Initialize Parse
 Parse.initialize("app");
@@ -40,8 +39,9 @@ export class AuthService {
   }
 
   // Observable value
-  get isUserLoggedIn() {
-    return this.loggedIn.asObservable();
+  get isUserLoggedIn(): Observable<boolean> {
+    this.loggedIn.next(this.isAuthenticated());
+    return this.loggedIn;
   }
 
   // Logout user
