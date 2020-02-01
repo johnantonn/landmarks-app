@@ -17,7 +17,7 @@ Information about the application.
 
 Landmarks application displays information about famous landmarks! It provides a typical guest functionality that involves a list of the landmarks, as well as a page with more details about an individual landmark. Furthermore, it provides an administration panel, where an authenticated adiministrator can update information about landmarks, upload images of them etc.
 
-### Components
+### Technology stack
 
 The application is composed of different components written using the following technologies:
 
@@ -28,6 +28,20 @@ The application is composed of different components written using the following 
 - Parse
 
 More details about the various frameworks/packages utilized by the app can be found in *package.json*.
+
+### Components
+
+The application consists of models, components and services. More specifically, the basic component tree structure is as below:
+
+- header
+- homepage
+- guest
+  - landmarkList
+  - landmarkDetails
+- admin
+  - dashboard(landmarkList)
+  - dashboardDetails(landmarkDetails)
+- page-not-found
 
 ## How to run the Application
 
