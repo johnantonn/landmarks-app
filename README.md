@@ -1,27 +1,42 @@
 # landmarks-app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+A MEAN application displaying information about famous landmarks!
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22 and it follows the MEAN paradigm. The following needs to be installed to run this project:
 
-## Code scaffolding
+- Node.js
+- Angular CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Application
 
-## Build
+Information about the application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### General
 
-## Running unit tests
+Landmarks application displays information about famous landmarks! It provides a typical guest functionality that involves a list of the landmarks, as well as a page with more details about an individual landmark. Furthermore, it provides an administration panel, where an authenticated adiministrator can update information about landmarks, upload images of them etc.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Components
 
-## Running end-to-end tests
+The application is composed of different components written using the following technologies:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- HTML
+- CSS
+- Bootstrap
+- Angular
+- Parse
 
-## Further help
+More details about the various frameworks/packages utilized by the app can be found in *package.json*.
+
+## How to run the Application
+
+This repo is the front-end application of a full-stack MEAN project. In order to run, it requires a back-end server which has been developed in a separate repo. In order to run the code successfully, follow the steps below:
+
+- Clone the back-end repo [https://github.com/johnantonn/landmarks-server](https://github.com/johnantonn/landmarks-server) and start the server. See more details in the repo's README.md.
+- Clone this repo (front-end Angular application) and install its dependencies by running 'npm install'.
+- Start the app by executing 'ng serve'. Navigate to `http://localhost:4200/` where the app is available.
+
+## Further Help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
