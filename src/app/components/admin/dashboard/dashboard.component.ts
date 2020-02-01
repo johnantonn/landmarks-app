@@ -27,8 +27,4 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  goBack(): void {
-    this.location.back();
-  }
-
 }
