@@ -42,6 +42,7 @@ export class DashboardDetailsComponent implements OnInit {
     document.getElementById("editableTitle").contentEditable = "true";
     document.getElementById("editableInfo").contentEditable = "true";
     document.getElementById("editableDescription").contentEditable = "true";
+    document.getElementById("editableUrl").contentEditable = "true";
     this.editActive = true;
   }
 
@@ -50,10 +51,12 @@ export class DashboardDetailsComponent implements OnInit {
     document.getElementById("editableTitle").contentEditable = "false";
     document.getElementById("editableInfo").contentEditable = "false";
     document.getElementById("editableDescription").contentEditable = "false";
+    document.getElementById("editableUrl").contentEditable = "false";
     // Recover text fields of Landmark object
     document.getElementById("editableTitle").textContent = this.landmark.title;
     document.getElementById("editableInfo").textContent = this.landmark.short_info;
     document.getElementById("editableDescription").textContent = this.landmark.description;
+    document.getElementById("editableUrl").textContent = this.landmark.url;
     this.editActive = false;
   }
 
@@ -62,10 +65,12 @@ export class DashboardDetailsComponent implements OnInit {
     document.getElementById("editableTitle").contentEditable = "false";
     document.getElementById("editableInfo").contentEditable = "false";
     document.getElementById("editableDescription").contentEditable = "false";
+    document.getElementById("editableUrl").contentEditable = "false";
     // Update text fields of Landmark object
     this.landmark.title = document.getElementById("editableTitle").textContent;
     this.landmark.short_info = document.getElementById("editableInfo").textContent;
     this.landmark.description = document.getElementById("editableDescription").textContent;
+    this.landmark.url = document.getElementById("editableUrl").textContent;
     this.editActive = false;
     // Call the service to update Landmark object
     this.landmarkService.updateLandmark(this.landmark).subscribe(res => {

@@ -1,17 +1,17 @@
 <div class="container-fluid">
   <div *ngIf="landmark" class="row">
     <!--Image-->
-    <div class="col-3">
+    <div class="col-2">
       <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
         <img class="img-fluid" src={{landmark.photo_thumb.url}} />
       </a>
       <div *ngIf="!landmark.photo_thumb">
-        <h3>Upload image</h3>
+        <img class="img-fluid" src="../../../../assets/placeholder_250x250.png" />
       </div>
       <app-image-upload></app-image-upload>
     </div>
     <!--Details-->
-    <div class="col-9">
+    <div class="col-10">
       <div class="row">
         <h2 id="editableTitle" contenteditable="false">
           {{landmark.title}}
@@ -20,13 +20,9 @@
         <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onCancel()">Cancel</button>
         <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onSave()">Save</button>
         <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
+        <p id="editableDescription" contenteditable="false">{{landmark.description}}</p>
+        <p>Official page: <a id="editableUrl" href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
       </div>
-    </div>
-  </div>
-  <div>
-    <p id="editableDescription" contenteditable="false">{{landmark.description}}</p>
-    <div>
-      <p>Official page: <a href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
     </div>
   </div>
   <!--Back button-->

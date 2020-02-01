@@ -20,7 +20,7 @@ export class UploadService {
 
   // Upload image
   uploadImage(landmarkId: string, formData: FormData): Observable<any> {
-    const url = `${this.landmarksUrl}/${landmarkId}/uploads`;
+    const url = `${this.landmarksUrl}/${landmarkId}/image`;
     return this.http.post<any>(url, formData, this.httpOptions);
   }
 

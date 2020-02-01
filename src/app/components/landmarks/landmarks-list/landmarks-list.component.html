@@ -2,12 +2,15 @@
   <ul class="landmarks">
     <li *ngFor="let landmark of landmarks">
       <div class="row">
-        <div class="col-3">
+        <div class="col-2">
           <a *ngIf=" landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
             <img class="img-fluid" src={{landmark.photo_thumb.url}} />
           </a>
+          <div *ngIf="!landmark.photo_thumb">
+            <img class="img-fluid" src="../../../../assets/placeholder_250x250.png" />
+          </div>
         </div>
-        <div class="col-9">
+        <div class="col-10">
           <a [routerLink]="['/landmarks', landmark.objectId]">
             <h2>{{landmark.title}}</h2>
           </a>
