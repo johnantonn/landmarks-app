@@ -48,8 +48,8 @@ The application consists of models, components and services. More specifically, 
 This repo is the front-end application of a full-stack MEAN project. In order to run, it requires a back-end server which has been developed in a separate repo. In order to run the code successfully, follow the steps below:
 
 - Clone the back-end repo [https://github.com/johnantonn/landmarks-server](https://github.com/johnantonn/landmarks-server) and start the server. See more details in the repo's README.md.
-- Clone this repo (front-end Angular application) and install its dependencies by running 'npm install'.
-- Start the app by executing 'ng serve'. Navigate to `http://localhost:4200/` where the app is available.
+- Clone this repo (front-end Angular application) and install its dependencies by running `npm install`.
+- Start the app by executing `ng serve`. Navigate to `http://localhost:4200/` where the app is available.
 
 ## Further Help
 
