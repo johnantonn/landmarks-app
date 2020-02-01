@@ -39,8 +39,10 @@ The application consists of models, components and services. More specifically, 
   - landmarkList
   - landmarkDetails
 - admin
-  - dashboard(landmarkList)
-  - dashboardDetails(landmarkDetails)
+  - login
+  - dashboard
+  - dashboardDetails
+  - image-upload
 - page-not-found
 
 ## How to run the application
