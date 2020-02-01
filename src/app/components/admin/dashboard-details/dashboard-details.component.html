@@ -19,8 +19,8 @@
         <button class="btn btn-primary btn-light" (click)="onEdit()">Edit</button>
         <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onCancel()">Cancel</button>
         <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onSave()">Save</button>
+        <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
       </div>
-      <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
     </div>
   </div>
   <div>
