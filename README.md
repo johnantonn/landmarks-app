@@ -49,7 +49,7 @@ This repo is the front-end application of a full-stack MEAN project. In order to
 
 - Clone the back-end repo [https://github.com/johnantonn/landmarks-server](https://github.com/johnantonn/landmarks-server) and start the server. See more details in the repo's README.md.
 - Clone this repo (front-end Angular application) and install its dependencies by running `npm install`.
-- Start the app by executing `ng serve`. Navigate to `http://localhost:4200/` where the app is available.
+- Start the app by executing `ng serve`. Navigate to `http://localhost:4200/` where the web app environment is available.
 
 ## Further Help
 
