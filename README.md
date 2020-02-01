@@ -19,7 +19,7 @@ Landmarks application displays information about famous landmarks! It provides a
 
 ### Technology stack
 
-The application is composed of different components written using the following technologies:
+The application (front-end module) is composed of different components written using the following technologies:
 
 - HTML
 - CSS
