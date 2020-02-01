@@ -4,7 +4,7 @@ A MEAN application displaying information about famous landmarks!
 
 ## Prerequisites
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22 and it is implemented with the MEAN stack. The following needs to be installed to run this project:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22 and it is implemented with the MEAN stack. The following packages need to be installed to run this project:
 
 - Node.js
 - Angular CLI
