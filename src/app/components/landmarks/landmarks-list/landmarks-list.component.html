@@ -4,12 +4,8 @@
       <div class="row">
         <div class="col-3">
           <a *ngIf=" landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
-            <img src={{landmark.photo_thumb.url}} />
+            <img class="img-fluid" src={{landmark.photo_thumb.url}} />
           </a>
-          <div *ngIf="!landmark.photo_thumb"
-            style="justify-content: center; align-items: center; display: flex; border: 2px solid black; width: 250px; height:250px">
-            <h3>No image available</h3>
-          </div>
         </div>
         <div class="col-9">
           <a [routerLink]="['/landmarks', landmark.objectId]">

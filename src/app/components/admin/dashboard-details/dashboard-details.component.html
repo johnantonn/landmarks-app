@@ -1,35 +1,34 @@
-<div>
+<div class="container-fluid">
   <div *ngIf="landmark" class="row">
-    <div class="column">
+    <!--Image-->
+    <div class="col-3">
       <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
-        <img src={{landmark.photo_thumb.url}} />
+        <img class="img-fluid" src={{landmark.photo_thumb.url}} />
       </a>
-      <div *ngIf="!landmark.photo_thumb"
-        style="justify-content: center; align-items: center; display: flex; border: 2px solid black; width: 250px; height:250px">
+      <div *ngIf="!landmark.photo_thumb">
         <h3>Upload image</h3>
       </div>
       <app-image-upload></app-image-upload>
     </div>
-    <div class=" column">
-      <h2 id="editableTitle" contenteditable="false">
-        {{landmark.title}}
-      </h2>
-      <button class="editButton" (click)="onEdit()">Edit</button>
-      <button *ngIf="editActive" (click)="onCancel()">Cancel</button>
-      <button *ngIf="editActive" (click)="onSave()">Save</button>
-      <p id="editableInfo" contenteditable="false">
-        {{landmark.short_info}}
-      </p>
+    <!--Details-->
+    <div class="col-9">
+      <div class="row">
+        <h2 id="editableTitle" contenteditable="false">
+          {{landmark.title}}
+        </h2>
+        <button class="btn btn-primary btn-light" (click)="onEdit()">Edit</button>
+        <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onCancel()">Cancel</button>
+        <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onSave()">Save</button>
+      </div>
+      <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
     </div>
   </div>
   <div>
-    <p id="editableDescription" contenteditable="false">
-      {{landmark.description}}
-    </p>
+    <p id="editableDescription" contenteditable="false">{{landmark.description}}</p>
     <div>
-      <p> More information:
-        <a href={{landmark.url}} target="_blank">{{landmark.url}}</a> </p>
+      <p>Official page: <a href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
     </div>
   </div>
-  <button (click)="goBack()">Back</button>
+  <!--Back button-->
+  <button *ngIf="landmark" class="btn btn-primary btn-light float-right" (click)="goBack()">Back</button>
 </div>

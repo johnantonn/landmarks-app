@@ -3,22 +3,21 @@
     <!--Image-->
     <div class="col-3">
       <a *ngIf="landmark.photo_thumb" href={{landmark.photo.url}} target="_blank">
-        <img src={{landmark.photo_thumb.url}} />
+        <img class="img-fluid" src={{landmark.photo_thumb.url}} />
       </a>
-      <div *ngIf="!landmark.photo_thumb"
-        style="justify-content: center; align-items: center; display: flex; border: 2px solid black; width: 250px; height:250px">
-        <h3>No image available</h3>
-      </div>
     </div>
     <!--Details-->
     <div class="col-9">
       <h2>{{landmark.title}}</h2>
       <p>{{landmark.short_info}}</p>
-      <p>{{landmark.description}}</p>
-      <div>
-        <p> Official link: <a href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
-      </div>
     </div>
-    <!--Back button-->
   </div>
+  <div>
+    <p>{{landmark.description}}</p>
+  </div>
+  <div>
+    <p> Official page: <a href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
+  </div>
+  <!--Back button-->
   <button *ngIf="landmark" class="btn btn-primary btn-light float-right" (click)="goBack()">Back</button>
+</div>

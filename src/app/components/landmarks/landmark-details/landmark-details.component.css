@@ -1,7 +1,11 @@
 .col-3 {
-  margin-top: 4%;
+  margin-top: 3%;
 }
 
 .col-9 {
   margin-top: 2%;
+}
+
+.btn {
+  margin: 2%;
 }
