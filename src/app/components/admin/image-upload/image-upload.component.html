@@ -1,7 +1,12 @@
 <div>
   <form>
     <div>
-      <input type="file" name="image" (change)="selectImage($event)" />
+      <div class="image-upload">
+        <label for="file">
+          <p *ngIf="!isSelected">Upload image</p>
+        </label>
+        <input id="file" type="file" (change)="selectImage($event)" />
+      </div>
     </div>
     <br>
     <div>

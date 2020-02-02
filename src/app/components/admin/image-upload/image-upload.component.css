@@ -1,0 +1,23 @@
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 15%;
+    cursor: pointer;
+}
+
+label{
+    text-align: center;
+    padding: 8px;
+    background: #f8f9fa;
+    display: table;
+    color: darkslategrey;
+    width: 100%;
+}
+
+p {
+    margin: auto;
+}
