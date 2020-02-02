@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UploadService } from 'src/app/services/upload.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-image-upload',
@@ -15,6 +16,7 @@ export class ImageUploadComponent implements OnInit {
   constructor(
     private uploadService: UploadService,
     private route: ActivatedRoute,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -39,7 +41,9 @@ export class ImageUploadComponent implements OnInit {
         window.location.reload();
       },
       (err) => {
-        window.alert(`Image upload failed! ${err.error.message}`);
+        this.toastr.error(err.error.message, 'Could not upload image!', {
+          closeButton: true,
+        });
       }
     );
   }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import Parse from 'parse';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 // Initialize Parse
 Parse.initialize("app");
@@ -18,7 +19,7 @@ export class AuthService {
   redirectUrl: string;
 
   // Constructor
-  constructor(private router: Router) {
+  constructor(private router: Router, private toastr: ToastrService) {
     this.redirectUrl = '/admin/dashboard';
     this.loggedIn = new BehaviorSubject<boolean>(false);
   }
@@ -34,7 +35,7 @@ export class AuthService {
       this.loggedIn.next(true);
       this.router.navigateByUrl(this.redirectUrl);
     }, (err) => {
-      window.alert("Invalid username and/or password");
+      this.toastr.error("Invalid credentials!", 'Login failed!');
     });
   }
 
@@ -50,7 +51,7 @@ export class AuthService {
     Parse.User.logOut().then((res) => {
       this.router.navigateByUrl('homepage');
     }, (err) => {
-      window.alert(err);
+      this.toastr.error(err, 'Something went wrong!');
     });
   }
 }
