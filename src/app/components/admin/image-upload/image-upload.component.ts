@@ -42,7 +42,7 @@ export class ImageUploadComponent implements OnInit {
         window.location.reload();
       },
       (err) => {
-        this.toastr.error(err.error.message, 'Could not upload image!');
+        this.toastr.warning(err.error.message, 'Cannot upload image!');
       }
     );
   }
