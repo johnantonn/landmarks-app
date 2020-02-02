@@ -38,12 +38,11 @@ export class ImageUploadComponent implements OnInit {
     this.isSelected = false;
     this.uploadService.uploadImage(id, formData).subscribe(
       (res) => {
+        this.toastr.success('Image was uploaded successfully!', 'Success!');
         window.location.reload();
       },
       (err) => {
-        this.toastr.error(err.error.message, 'Could not upload image!', {
-          closeButton: true,
-        });
+        this.toastr.error(err.error.message, 'Could not upload image!');
       }
     );
   }
