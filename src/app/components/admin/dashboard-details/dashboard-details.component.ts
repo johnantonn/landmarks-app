@@ -3,6 +3,7 @@ import { Landmark } from 'src/app/models/Landmark';
 import { ActivatedRoute } from '@angular/router';
 import { LandmarkService } from 'src/app/services/landmark.service';
 import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard-details',
@@ -19,6 +20,7 @@ export class DashboardDetailsComponent implements OnInit {
     private landmarkService: LandmarkService,
     private route: ActivatedRoute,
     private location: Location,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -74,7 +76,9 @@ export class DashboardDetailsComponent implements OnInit {
     this.editActive = false;
     // Call the service to update Landmark object
     this.landmarkService.updateLandmark(this.landmark).subscribe(res => {
-      console.log(`Successfully updated: ${this.landmark.title}`)
+      this.toastr.success(res.message, 'Success!');
+    }, (err) => {
+      this.toastr.error('Could not update object', 'Failed!');
     })
   }
 }
