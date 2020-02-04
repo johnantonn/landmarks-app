@@ -6,4 +6,8 @@ export class Landmark {
   url: string;
   photo: string;
   photo_thumb: string;
+  geo: {
+    latitude: Number,
+    longitude: Number,
+  };
 }

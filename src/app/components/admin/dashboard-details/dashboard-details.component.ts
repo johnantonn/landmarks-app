@@ -13,9 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 export class DashboardDetailsComponent implements OnInit {
   @Input() landmark: Landmark;
   @Output() deleteLandmark: EventEmitter<Landmark> = new EventEmitter();
-  latitude = 25.141975;
-  longitude = 55.186147;
-  zoom = 11;
 
   editActive: boolean;
 

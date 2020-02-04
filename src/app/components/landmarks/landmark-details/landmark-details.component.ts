@@ -12,9 +12,6 @@ import { Location } from '@angular/common';
 export class LandmarkDetailsComponent implements OnInit {
   @Input() landmark: Landmark;
   @Output() deleteLandmark: EventEmitter<Landmark> = new EventEmitter();
-  latitude = 25.141975;
-  longitude = 55.186147;
-  zoom = 11;
 
   constructor(
     private landmarkService: LandmarkService,

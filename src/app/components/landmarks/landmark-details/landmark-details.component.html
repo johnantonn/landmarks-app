@@ -15,8 +15,8 @@
       <p>{{landmark.short_info}}</p>
       <p>{{landmark.description}}</p>
       <div>
-        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-          <agm-marker [latitude]="latitude" [longitude]="longitude">
+        <agm-map [latitude]="landmark.geo.latitude" [longitude]="landmark.geo.longitude" [zoom]=12>
+          <agm-marker [latitude]="landmark.geo.latitude" [longitude]="landmark.geo.longitude">
           </agm-marker>
         </agm-map>
       </div>

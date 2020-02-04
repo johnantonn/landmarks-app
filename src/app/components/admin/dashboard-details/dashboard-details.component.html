@@ -20,8 +20,8 @@
       <button id="saveBtn" *ngIf="editActive" class="btn btn-primary btn-light" (click)="onSave()">Save</button>
       <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
       <p id="editableDescription" contenteditable="false">{{landmark.description}}</p>
-      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-        <agm-marker [latitude]="latitude" [longitude]="longitude">
+      <agm-map [latitude]="landmark.geo.latitude" [longitude]="landmark.geo.longitude" [zoom]=12>
+        <agm-marker [latitude]="landmark.geo.latitude" [longitude]="landmark.geo.longitude">
         </agm-marker>
       </agm-map>
       <p>Official page: <a id="editableUrl" href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
