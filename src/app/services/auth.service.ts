@@ -5,8 +5,8 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 // Initialize Parse
-Parse.initialize("app");
-Parse.serverURL = 'http://localhost:1337/parse'
+Parse.initialize('app');
+Parse.serverURL = 'http://localhost:1337/parse';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    if (Parse.User.current()) return true;
-    else return false;
+    if (Parse.User.current()) { return true; } else { return false; }
   }
 
   // Login user
@@ -35,7 +34,7 @@ export class AuthService {
       this.loggedIn.next(true);
       this.router.navigateByUrl(this.redirectUrl);
     }, (err) => {
-      this.toastr.error("Invalid credentials!", 'Login failed!');
+      this.toastr.error('Invalid credentials!', 'Login failed!');
     });
   }
 

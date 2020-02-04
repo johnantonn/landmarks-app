@@ -7,7 +7,7 @@ import { Landmark } from '../models/Landmark';
 export class LandmarkService {
 
   // Server api endpoint
-  private landmarksUrl: string = 'http://localhost:1337/parse/landmarks';
+  private landmarksUrl = 'http://localhost:1337/parse/landmarks';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -32,7 +32,7 @@ export class LandmarkService {
 
   // PUT: update landmark on the server
   updateLandmark(landmark: Landmark): Observable<any> {
-    const url = `${this.landmarksUrl}/${landmark.objectId}`
+    const url = `${this.landmarksUrl}/${landmark.objectId}`;
     return this.http.put(url, landmark, this.httpOptions);
   }
 

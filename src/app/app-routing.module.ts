@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LandmarksListComponent } from './components/landmarks/landmarks-list/landmarks-list.component';
 import { LandmarkDetailsComponent } from './components/landmarks/landmark-details/landmark-details.component';
 import { HomepageComponent } from './components/homepage/homepage.component';

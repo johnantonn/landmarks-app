@@ -27,7 +27,7 @@ export class LandmarkDetailsComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     this.landmarkService.getLandmarkById(id).subscribe(landmark => {
       this.landmark = landmark;
-    })
+    });
   }
 
   goBack(): void {

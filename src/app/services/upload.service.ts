@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UploadService {
   // Server api endpoint
-  private landmarksUrl: string = 'http://localhost:1337/landmarks';
+  private landmarksUrl = 'http://localhost:1337/landmarks';
 
   httpOptions = {
     headers: new HttpHeaders({
