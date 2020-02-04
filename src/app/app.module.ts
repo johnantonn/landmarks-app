@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
-
+import { AGM_API_KEY } from './config.js';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandmarksListComponent } from './components/landmarks/landmarks-list/landmarks-list.component';
@@ -38,7 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCte9nqTmccCZSGn8zU2Gl50dpsoN9uMng'
+      apiKey: AGM_API_KEY
     })
   ],
   providers: [],
