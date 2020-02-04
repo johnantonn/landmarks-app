@@ -16,6 +16,7 @@ import { DashboardDetailsComponent } from './components/admin/dashboard-details/
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomepageComponent,
     LoginComponent,
     DashboardComponent,
-    DashboardDetailsComponent
+    DashboardDetailsComponent,
+    GoogleMapComponent
   ],
   imports: [
     BrowserModule,
