@@ -12,20 +12,19 @@
     </div>
     <!--Details-->
     <div class="col-10">
-      <div class="row">
-        <h2 id="editableTitle" contenteditable="false">
-          {{landmark.title}}
-        </h2>
-        <button class="btn btn-primary btn-light" (click)="onEdit()">Edit</button>
-        <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onCancel()">Cancel</button>
-        <button *ngIf="editActive" class="btn btn-primary btn-light" (click)="onSave()">Save</button>
-        <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
-        <p id="editableDescription" contenteditable="false">{{landmark.description}}</p>
-        <div>
-          <app-google-map></app-google-map>
-          <p>Official page: <a id="editableUrl" href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
-        </div>
-      </div>
+      <h2 id="editableTitle" contenteditable="false">
+        {{landmark.title}}
+      </h2>
+      <button id="editBtn" class="btn btn-primary btn-light" (click)="onEdit()">Edit</button>
+      <button id="cancelBtn" *ngIf="editActive" class="btn btn-primary btn-light" (click)="onCancel()">Cancel</button>
+      <button id="saveBtn" *ngIf="editActive" class="btn btn-primary btn-light" (click)="onSave()">Save</button>
+      <p id="editableInfo" contenteditable="false">{{landmark.short_info}}</p>
+      <p id="editableDescription" contenteditable="false">{{landmark.description}}</p>
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude">
+        </agm-marker>
+      </agm-map>
+      <p>Official page: <a id="editableUrl" href={{landmark.url}} target="_blank">{{landmark.url}}</a></p>
     </div>
   </div>
   <!--Back button-->

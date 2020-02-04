@@ -11,5 +11,14 @@
 }
 
 .btn {
-  margin-left: 5px;
+  margin-left: 10px;
+}
+
+#editBtn, #saveBtn, #cancelBtn, #editableTitle {
+  display: inline-block;
+}
+
+agm-map { 
+  height: 300px;
+  margin: 1px;
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,6 @@ import { DashboardDetailsComponent } from './components/admin/dashboard-details/
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +29,17 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
     HomepageComponent,
     LoginComponent,
     DashboardComponent,
-    DashboardDetailsComponent,
-    GoogleMapComponent
+    DashboardDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCte9nqTmccCZSGn8zU2Gl50dpsoN9uMng'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

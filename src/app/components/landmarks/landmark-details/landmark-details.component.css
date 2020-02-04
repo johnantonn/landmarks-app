@@ -9,3 +9,8 @@
 .btn {
   margin: 2%;
 }
+
+agm-map { 
+  height: 300px;
+  margin: 1px;
+}
