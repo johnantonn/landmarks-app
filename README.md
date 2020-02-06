@@ -27,7 +27,7 @@ The application (front-end module) is composed of different components written u
 - Angular
 - Parse
 
-More details about the various frameworks/packages utilized by the app can be found in *package.json*.
+The full list of packages utilized by the app can be found in *package.json*.
 
 ### Components
 
@@ -51,6 +51,7 @@ This repo is the front-end application of a full-stack MEAN project. In order to
 
 - Clone the back-end repo [https://github.com/johnantonn/landmarks-server](https://github.com/johnantonn/landmarks-server) and start the server. See more details in the repo's README.md.
 - Clone this repo (front-end Angular application) and install its dependencies by running `npm install`.
+- Insert a valid API key value inside *config.js* for Google Maps integration.
 - Start the app by executing `ng serve`. Navigate to `http://localhost:4200/` where the web app environment is available.
 
 ## Further help
