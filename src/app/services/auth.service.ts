@@ -28,6 +28,10 @@ export class AuthService {
     if (Parse.User.current()) { return true; } else { return false; }
   }
 
+  getUserSessionToken(): string {
+    return Parse.User.current().getSessionToken();
+  }
+
   // Login user
   login(username, password) {
     Parse.User.logIn(username, password).then((success) => {

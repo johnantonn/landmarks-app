@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,13 @@ export class UploadService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'X-Parse-Application-Id': 'app'
+      'X-Parse-Application-Id': 'app',
+      sessionToken: this.authService.getUserSessionToken()
     })
   };
 
   constructor(
-    private http: HttpClient) { }
+    private http: HttpClient, private authService: AuthService) { }
 
   // Upload image
   uploadImage(landmarkId: string, formData: FormData): Observable<any> {

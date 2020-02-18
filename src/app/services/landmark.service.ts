@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Landmark } from '../models/Landmark';
+import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class LandmarkService {
@@ -17,7 +18,7 @@ export class LandmarkService {
   };
 
   constructor(
-    private http: HttpClient) { }
+    private http: HttpClient, private authService: AuthService) { }
 
   // GET landmarks from the server
   getLandmarks(): Observable<Landmark[]> {
@@ -33,7 +34,11 @@ export class LandmarkService {
   // PUT: update landmark on the server
   updateLandmark(landmark: Landmark): Observable<any> {
     const url = `${this.landmarksUrl}/${landmark.objectId}`;
-    return this.http.put(url, landmark, this.httpOptions);
+    const body = {
+      landmark: landmark,
+      sessionToken: this.authService.getUserSessionToken()
+    }
+    return this.http.put(url, body, this.httpOptions);
   }
 
 }
