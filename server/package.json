@@ -1,0 +1,40 @@
+{
+  "name": "dubai-landmarks-server",
+  "version": "1.4.0",
+  "description": "A Parse API server that serves an Angular application showing Dubai's most famous landmarks",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnantonn/dubai-landmarks-server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "apidoc": "^0.17.7",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "kerberos": "~0.0.x",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2",
+    "parse": "1.11.1",
+    "parse-dashboard": "^2.0.5",
+    "parse-server": "2.7.4",
+    "sharp": "^0.24.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "docs": "apidoc -i routes/ -o docs/"
+  },
+  "apidoc": {
+    "title": "Landmarks Application API",
+    "template": {
+      "forceLanguage": "en",
+      "withCompare": false,
+      "withGenerator": false
+    }
+  },
+  "engines": {
+    "node": ">=4.3"
+  }
+}
