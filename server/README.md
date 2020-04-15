@@ -1,6 +1,6 @@
 # landmarks-server
 
-This is the back-end server repo of the Landmarks MEAN application. The respective front-end repo can be found at [https://github.com/johnantonn/landmarks-app](https://github.com/johnantonn/landmarks-app).
+This is the back-end server repo of the Landmarks MEAN application.
 
 ## About
 
