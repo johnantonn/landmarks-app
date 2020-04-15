@@ -35,7 +35,7 @@ This repo is the front-end application of a full-stack MEAN project. In order to
 
 - Clone this repo and install its dependencies by running `npm install`.
 - Insert a valid API key value inside *config.js* for Google Maps integration.
-- Install and start the back-end server. See more details in the README.md under `server` directory.
+- Install and start the back-end server. See more details in the README.md in *server* directory.
 - Start the app by executing `ng serve`. Navigate to `http://localhost:4200/` where the web app environment is available.
 
 ## Further help
