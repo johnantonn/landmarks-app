@@ -29,22 +29,6 @@ The application (front-end module) is composed of different components written u
 
 The full list of packages utilized by the app can be found in *package.json*.
 
-### Components
-
-The application consists of models, components and services. More specifically, the basic component tree structure is as below:
-
-- header
-- homepage
-- guest
-  - landmarkList
-  - landmarkDetails
-- admin
-  - login
-  - dashboard
-  - dashboardDetails
-  - image-upload
-- page-not-found
-
 ## How to run the application
 
 This repo is the front-end application of a full-stack MEAN project. In order to run, it requires a back-end server which has been developed in a separate repo. In order to run the code successfully, follow the steps below:
