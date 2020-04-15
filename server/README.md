@@ -20,7 +20,6 @@ Make sure you have at least Node 4.3. `node --version`
 
 ## Start the server
 
-* Clone this repo and change directory to it
 * Install dependencies by running `npm install`
 * Have a MongoDB installation locally or remotely (e.g. MongoDB Atlas)
 * Set a .env file with the appropriate environmental variables (sample provided):
