@@ -1,6 +1,6 @@
 # landmarks-app
 
-A MEAN application displaying information about famous landmarks!
+A MEAN web application that provides information about famous landmarks.
 
 ## Prerequisites
 
