@@ -16,7 +16,7 @@
     "kerberos": "~0.0.x",
     "multer": "^1.4.2",
     "nodemon": "^2.0.2",
-    "parse": "1.11.1",
+    "parse": "2.10.0",
     "parse-dashboard": "^2.0.5",
     "parse-server": "4.3.0",
     "sharp": "^0.24.0"
